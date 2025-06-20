@@ -3,10 +3,11 @@ import route from './Router/Router.js'
 import Db from './Database/Db.js';
 
 const app = express()
+app.use(express.json())
 const PORT = 6004;
 Db('mongodb://127.0.0.1:27017/Newone')
 // app.get('/',)
-app.use('./crud',route)
+app.use('/crud',route)
 
 app.listen(PORT,()=>{
     console.log(`http://localhost:${PORT}`)    
