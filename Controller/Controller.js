@@ -39,12 +39,12 @@ export const updateData = async(req,res)=>{
 }
 export const deleteData = async(req,res)=>{
     try{
-        const {Mobile} = req.params
-        const deleteData = await User.findOneAndDelete({Mobile}) 
+        const {userName} = req.params
+        const deleteData = await User.findOneAndDelete({userName}) 
     if(!deleteData){
             return res.status(404).json({err:"User doesn't exist"})
         }
-        return res.status(200).json({message:`${Mobile} User is Deleted Succesfully`})
+        return res.status(200).json({message:`${userName} User is Deleted Succesfully`})
     } catch (error) {
         return res.status(403).json({message:"Unable to Delete data",err:error})
     }

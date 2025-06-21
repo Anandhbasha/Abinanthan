@@ -3,10 +3,10 @@ import { deleteData, insertData, loginUser, readData, registerUser, updateData, 
 
 const route = express.Router()
 
-route.get('/',verifyToken, readData)
+route.get('/', readData)
 route.post('/insert',insertData)
 route.put('/:Mobile',updateData)
-route.delete('/:name',deleteData)
+route.delete('/:userName',deleteData)
 route.post('/newUser',registerUser)
 route.post('/loginUser',loginUser)
 
